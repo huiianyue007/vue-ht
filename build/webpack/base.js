@@ -19,25 +19,13 @@ export default {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      assets: resolvePath('docs/src/assets')
+      assets: resolvePath('docs/src/assets'),
+      '@': resolvePath('docs/src'),
+      '@@': resolvePath('src')
     }
   },
   module: {
     rules: [
-      {
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [
-          resolvePath('build'),
-          resolvePath('src'),
-          resolvePath('docs')
-        ],
-        options: {
-          fix: true,
-          formatter: eslintFormatter
-        }
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',

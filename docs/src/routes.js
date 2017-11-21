@@ -3,9 +3,8 @@ import Introduction from './pages/Introduction';
 import Error404 from './pages/Error';
 
 /* Components */
-import StatusBar from './pages/components/StatusBar.vue';
-import GradientsBar from './pages/components/GradientsBar.vue';
-
+import Box from './pages/components/box';
+import ajax from './pages/util/ajax';
 /* UI Elements */
 import Typography from './pages/ui-elements/Typography';
 import Layout from './pages/ui-elements/Layout';
@@ -18,18 +17,15 @@ const main = [
   }
 ];
 
-const components = [
-  {
-    path: '/components/status-bar',
-    name: 'statusBar',
-    component: StatusBar
-  },
-  {
-    path: '/components/gradients-bar',
-    name: 'gradientsBar',
-    component: GradientsBar
-  }
-];
+const components = [{
+  path: '/components/box',
+  name: 'box',
+  component: Box
+}, {
+  path: '/util/ajax',
+  name: 'ajax',
+  component: ajax
+}];
 
 const theme = [
 ];

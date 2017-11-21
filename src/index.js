@@ -1,32 +1,36 @@
-// import Core from './core'
-import * as tkStatusBar from './components/tkStatusBar';
-import * as tkGradientsBar from './components/tkGradientsBar';
-
-const options = {
-  // Core,
-  tkStatusBar,
-  tkGradientsBar
+import * as htBox from '@@/components/htBox/';
+import * as htVuexStorage from '@@/utils/vuexStorage/';
+import * as htAjax from '@@/utils/htAjax/';
+let option = {
+  htBox,
+  htVuexStorage,
+  htAjax
 };
+let components = {};
+const install = function(Vue) {
+  Object.entries(option).forEach((item) => {
+    Object.entries(item[1]).forEach((it) => {
+      if (it[0] === 'default') {
+        const componentsInstaller = it[1].install;
 
-const components = {
-};
-
-components.install = (Vue) => {
-  for (let component in options) {
-    for (let item in options[component]) {
-      if (item === 'install') {
-        const componentInstaller = options[component].install;
-
-        if (componentInstaller) {
-          Vue.use(componentInstaller);
+        if (componentsInstaller) {
+          Vue.use(componentsInstaller);
         }
-      } else {
-        components[item] = options[component][item];
+      } else if (it[0] !== 'install') {
+        components[it[0]] = it[1];
       }
-    }
-  }
+    });
+  });
 };
 
-window.VueTk = components;
-
+Object.entries(option).forEach((item) => {
+  Object.entries(item[1]).forEach((it) => {
+    if (it[0] === 'default') {
+      components[item[0]] = item[1].default;
+    } else if (it[0] !== 'install') {
+      components[it[0]] = it[1];
+    }
+  });
+});
+components.install = install;
 export default components;

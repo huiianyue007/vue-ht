@@ -1,0 +1,17 @@
+// 基于 640px UI
+$basic: 64px/1rem;
+
+// color
+// grey
+$grey000: #000000;
+$grey100: #333333;
+$grey200: #444444;
+$grey300: #999999;
+$grey700: #d7d7d7;
+$grey800: #f8f8f8;
+$grey900: #ffffff;
+$grey: $grey000 !default;
+
+// blue
+$blue100: #00BCD4;
+$blue: $blue100 !default;

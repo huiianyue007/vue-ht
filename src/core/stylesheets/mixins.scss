@@ -1,0 +1,16 @@
+// transition
+@mixin transition($during: .3s, $timing: ease-in-out) {
+  transition: all $during $timing;
+}
+
+// 1px border
+@mixin border($bg, $height: 1px) {
+  display: block;
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: $height;
+  background: $bg;
+  transform: scaleY(0.5);
+}

@@ -19,10 +19,18 @@
             <md-list-expand>
               <md-list>
                 <md-list-item class="md-inset">
-                  <router-link exact to="/components/status-bar">状态栏</router-link>
+                  <router-link exact to="/components/box">box</router-link>
                 </md-list-item>
+              </md-list>
+            </md-list-expand>
+          </md-list-item>
+          <md-list-item>
+            <span>工具</span>
+
+            <md-list-expand>
+              <md-list>
                 <md-list-item class="md-inset">
-                  <router-link exact to="/components/gradients-bar">滚动渐变栏</router-link>
+                  <router-link exact to="/util/ajax">ajax</router-link>
                 </md-list-item>
               </md-list>
             </md-list-expand>

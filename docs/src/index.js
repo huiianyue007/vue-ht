@@ -7,6 +7,7 @@ import 'vue-material/dist/vue-material.css';
 /* Configs */
 import './config.js';
 import routes from './routes.js';
+import store from './store';
 import App from './App';
 
 import PageContent from './components/PageContent';
@@ -32,6 +33,7 @@ let router = new VueRouter({
 let Docs = Vue.component('app', App);
 
 Docs = new Docs({
+  store,
   el: '#app',
   router
 });
